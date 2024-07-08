@@ -1,5 +1,7 @@
 package uzb.aminasaidakhmedova.factory.entity;
 
+import java.util.Random;
+
 public class Dog {
     private static Long newId = 1000L;
     private int age;
@@ -7,23 +9,15 @@ public class Dog {
     private String color;
     private Long id;
 
-    public Dog(int age, int weight, String color) {
-        this.age = age;
-        this.weight = weight;
+    public Dog(String color) {
+        this.age = new Random().nextInt(20);
+        this.weight = new Random().nextInt(30);
         this.color = color;
         this.id = newId++;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public int getAge() {
         return age;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
     }
 
     public int getWeight() {
