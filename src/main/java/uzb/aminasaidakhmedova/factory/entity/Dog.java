@@ -1,16 +1,17 @@
 package uzb.aminasaidakhmedova.factory.entity;
 
 public class Dog {
+    private static Long newId = 1000L;
     private int age;
     private int weight;
     private String color;
     private Long id;
 
-    public Dog(int age, int weight, String color, Long id) {
+    public Dog(int age, int weight, String color) {
         this.age = age;
         this.weight = weight;
         this.color = color;
-        this.id = id;
+        this.id = newId++;
     }
 
     public void setAge(int age) {
@@ -35,10 +36,6 @@ public class Dog {
 
     public String getColor() {
         return color;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public Long getId() {
