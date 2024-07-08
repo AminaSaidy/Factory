@@ -1,15 +1,16 @@
 package uzb.aminasaidakhmedova.factory.entity;
 
+import java.awt.*;
 import java.util.Random;
 
 public class Dog {
     private static Long newId = 1000L;
     private int age;
     private int weight;
-    private String color;
+    private Color color;
     private Long id;
 
-    public Dog(String color) {
+    public Dog(Color color) {
         this.age = new Random().nextInt(20);
         this.weight = new Random().nextInt(30);
         this.color = color;
@@ -24,11 +25,7 @@ public class Dog {
         return weight;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
