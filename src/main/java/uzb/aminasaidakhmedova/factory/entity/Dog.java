@@ -4,17 +4,17 @@ import java.awt.*;
 import java.util.Random;
 
 public class Dog {
-    private static Long newId = 1000L;
+    private Long nextId = 1000L;
     private int age;
     private int weight;
     private Color color;
     private Long id;
 
-    public Dog(Color color) {
-        this.age = new Random().nextInt(20);
-        this.weight = new Random().nextInt(30);
+    public Dog(int age, int weight, Color color) {
+        this.age = age;
+        this.weight = weight;
         this.color = color;
-        this.id = newId++;
+        this.id = nextId++;
     }
 
     public int getAge() {
@@ -31,6 +31,19 @@ public class Dog {
 
     public Long getId() {
         return id;
+    }
+
+    public enum Color {
+        Black(40), White(30), Ginger(20), Gray(10);
+        private int popularity;
+
+        Color(int popularity) {
+            this.popularity = popularity;
+        }
+
+        public int getPopularity() {
+            return popularity;
+        }
     }
 
     @Override
