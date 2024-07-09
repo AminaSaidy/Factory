@@ -2,13 +2,14 @@ package uzb.aminasaidakhmedova.factory.entity;
 
 import java.awt.*;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicLong;
 
-public class Dog {
-    private Long nextId = 1000L;
+public class Dog implements Comparable<Dog>{
+    private static Long nextId = 100L;
     private int age;
     private int weight;
     private Color color;
-    private Long id;
+    private final Long id;
 
     public Dog(int age, int weight, Color color) {
         this.age = age;
@@ -31,6 +32,11 @@ public class Dog {
 
     public Long getId() {
         return id;
+    }
+
+    @Override
+    public int compareTo(Dog otherDog) {
+        return this.age - otherDog.getAge();
     }
 
     public enum Color {
