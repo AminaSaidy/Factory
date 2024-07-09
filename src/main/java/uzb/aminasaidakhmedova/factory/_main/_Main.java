@@ -24,7 +24,7 @@ public class _Main {
         Collections.sort(dogs);
 
         System.out.println("Sorted by age: ");
-        for(Dog dog : dogs) {
+        for (Dog dog : dogs) {
             System.out.println(dog);
         }
     }
